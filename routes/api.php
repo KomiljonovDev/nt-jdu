@@ -22,3 +22,20 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('schedules', ScheduleController::class);
 
 });
+
+/*
+ * TODO
+ * CI
+ * CD
+ * 
+ * 1. Connect to server (via SSH)
+ * 2. cd /var/www/nt-jdu/
+ * 3. git reset --hard
+ * 4. git pull
+ * 5. docker exec jdu_app php artisan migrate
+ * 6. docker exec jdu_app php artisan optimize
+ *
+ */
+
+
+

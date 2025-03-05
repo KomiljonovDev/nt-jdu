@@ -21,14 +21,14 @@ class SubjectController extends Controller
     public function store (StoreSubjectRequest $request) {
         $validator = $request->validated();
         Subject::query()->create($validator);
-        return response()->json(['message' => 'Subject created successfully.']);
+        return response()->json(['message' => 'Subject created successfully.'], 201);
     }
     public function update(UpdateSubjectRequest $request, Subject $subject){
         $validator = $request->validated();
         $subject->update($validator);
-        return response()->json(['message' => 'Subject updated successfully.']);
+        return response()->json(['message' => 'Subject updated successfully.'], 201);
     }
-    public function delete(Subject $subject){
+    public function destroy(Subject $subject){
         $subject->delete();
         return response()->json(['message' => 'Subject deleted successfully.']);
     }

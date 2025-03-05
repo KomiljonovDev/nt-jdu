@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    public function __construct (protected ScheduleService $scheduleService) {
-    }
 
     /**
      * Display a listing of the resource.
