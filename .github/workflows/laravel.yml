@@ -47,4 +47,10 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             cd /var/www/nt-jdu
-            pwd
+            docker compose down
+            git reset --hard
+            git pull
+            docker compose up -d --build
+            docker exec jdu_app php artisan migrate
+            docker exec jdu_app php artisan optimize
+            echo "Deploy Completed!"
